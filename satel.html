@@ -1,0 +1,22 @@
+	<script src="js/satel.js"></script>
+
+	<div class="row justify-content-md-center">
+		<div class="col-sm-12">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title"><span class="oi oi-shield"/> Ustawienia Satel</h5>
+					<div class="col-6">
+						<div class="input-group">
+							<input type="text" class="form-control mb-1" id="satelIP" placeholder="Adres IP"/>
+							<input type="text" class="form-control mb-1" id="satelPort" placeholder="Port"/>
+						</div>
+						<input type="text" class="form-control mb-1" id="satelUserCode" placeholder="User Code" size="4"/>
+						<button class="btn btn-primary" onclick="sendConfig()">Wyślij konfigurację</button>
+					</div>
+					Wybierz zainstalowane elementy Satela<br>
+					<div id="satelContent"/>
+				</div>
+			</div>
+		</div>
+	</div>
+	

@@ -1,0 +1,50 @@
+<script src="js/switch.js"></script>
+<script>
+$().ready(function(){
+	showSwList();
+}); 
+</script>
+
+<div class="row">
+	<div class="col-sm">
+		<div class="card">
+			<div class="card-body"><h5 class="card-title"><span class="oi oi-grid-three-up"/> Zadajniki
+			<div class="btn-group float-right">
+				<button id="addSwitch" class="btn btn-sm btn-primary" onclick="addSwitch()"><span class="oi oi-loop-circular"/> Auto</button>
+				<button id="anulujSwitch" class="btn btn-sm btn-danger d-none" onclick="addSwitch('anuluj')"><span class="oi oi-action-undo"/></button>
+        <button id="addSwitchManual" class="btn btn-sm btn-primary" onclick="addSwitchManual()"><span class="oi oi-wrench"/> Manual</button>
+			</div>
+			</h5>
+			<hr>
+				<div id="switchesList" class="list-group">
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class="col-sm">
+		<div id="editSwitch" class="card" style="display: none;">
+			<div class="card-body">
+				<h6 class="card-title">
+					<span class="oi oi-pencil"/> Konfiguruj zadajnik<div class="float-right"><button id="removeSwitch" class="btn btn-sm btn-danger" onclick="removeSwitch()"><span class="oi oi-x"/> Usuń</button></div>
+				</h6>
+			<hr>
+				<label for="switchName">Nazwa zadajnika</label>
+				<input id="switchName" type="text" class="form-control" placeholder="nazwa przełącznika"><br>
+				<label for="switchAddress">Adres zadajnika </label><button id="changeSwitch" class="btn btn-sm btn-primary  float-right" onclick="changeAddressS()"><span class="oi oi-pencil"/> Przypisz</button>
+				
+				<input id="switchAddress" type="number" class="form-control" placeholder="adres zadajnika"><br>
+				<label for="switchNumber">Ilość przycisków</label>
+				  <select id="switchNumber" class="form-control">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option selected>4</option>
+				  </select>
+				  
+			</div>
+			
+		</div>
+	</div>
+</div>

@@ -1,0 +1,63 @@
+	<script src="js/config.js"></script>
+	
+	<div class="row">
+		<div class="col-sm-12 mb-4">
+			<div class="card">
+				<div class="card-body">
+				<h5 class="card-title"><span class="oi oi-grid-two-up"/> Konfiguracja <div class="btn-group float-right">
+						<button class="btn btn-primary btn-sm" onclick="sendConfig()" id="sendConfig"><span class="oi oi-location"/> Wyślij całą konfigurację</button> 
+						<button class="btn btn-danger btn-sm" onclick="sendDefault()" id="sendDefault"><span class="oi oi-action-undo"/> Przywróć ustawienia fabryczne</button> 
+					</div></h5>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-7 mb-4" id="visualization">
+			<div class="card">
+				<div class="card-body">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text"><span class="oi oi-account-login"/> </div>
+						</div> 
+						<select id="switchesList" class="form-control" onchange="showSwitch()"></select>
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="oi oi-loop-circular"/> Auto &nbsp <input type="checkbox" id="autoSelect" aria-label="Automatyczne wybieranie"/>
+							</div>
+						</div> 
+					</div>
+					<hr>
+					<div class="container" id="switch" style="display: none;">
+						<div class="row justify-content-md-center" style="height: 100px">
+							<div id="btn1" onclick="editBtn(1)" class="col-5 btn btn-secondary btn-top disabled m-1"><b>Pusty</b><h1>1</h1></div>
+							<div id="btn2" onclick="editBtn(2)" class="col-5 btn btn-secondary btn-top disabled m-1"><b>Pusty</b><h1>2</h1></div>
+						</div>
+						<div class="row justify-content-md-center" style="height: 100px">
+							<div id="btn3" onclick="editBtn(3)" class="col-5 btn btn-secondary btn-bottom disabled m-1"><h1>3</h1><b>Pusty</b></div>
+							<div id="btn4" onclick="editBtn(4)" class="col-5 btn btn-secondary btn-bottom disabled m-1"><h1>4</h1><b>Pusty</b></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
+		<div class="col-5 mb-4" id="relays">
+			<div class="card">
+				<div class="card-body">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text"><span class="oi oi-account-logout"/> </div>
+						</div>
+						<input type="text" id="relaysSearch" class="form-control" onkeyup="search()"  placeholder="Szukaj przekaźnika..."> 
+					</div>
+					<hr>
+					<div class="list-group" id="relaysList" role="tablist" style="height: 400px; overflow: auto;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

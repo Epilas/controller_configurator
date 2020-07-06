@@ -1,0 +1,51 @@
+<script src="js/openhab.js"></script>
+<script>
+loadRlList();
+loadGroupList();
+</script>
+<style>
+.nextRow {
+	margin-left: 50px;
+}
+</style>
+
+<div class="row mb-4">
+	<div class="col-sm">
+		<div class="card">
+
+			<div class="card-body"><h5 class="card-title">Istniejące szablony</h5>
+				<div id="openhab">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-7">
+		<div class="card">
+			<div class="card-body"><h5 class="card-title"><span class="oi oi-fork"/> Aktualny szablon
+			<div class="float-right ">
+				<button class="btn btn-primary btn-sm" onclick="createSitemap()"><span class="oi oi-external-link"/> Generuj SITEMAP</button>
+			</div>
+			<hr>
+				<div id="groupList">
+					<center>Brak grup</center>
+				</div>
+				<br>
+				<button id="addCtr" class="btn btn-sm btn-primary btn-block" onclick="addGroup()"><span class="oi oi-folder"/> Dodaj grupę</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-5">
+		<div class="card" >
+			<div class="card-body">
+				<h5 class="card-title row">
+					<div class="col-4"><span class="oi oi-account-login"> Przekaźniki</div> <div class="col-8"><input type="text" id="searchRelayInput" class="form-control" onkeyup="searchRelay()"  placeholder="Szukaj przekaźnika..."> </div>
+				</h5>
+			<hr>
+				<div id="listOfRelays"><center>Brak przekaźników</center></div>  
+			</div>
+		</div>
+	</div>
+</div>

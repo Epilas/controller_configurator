@@ -1,0 +1,131 @@
+<script src="js/controller.js"></script>
+<script>
+$().ready(function(){
+	updateCtrList();
+	
+	$("#relay1, #relay2, #relay3, #relay4, #relay5, #relay6, #relay7, #relay8, #ctrName")
+	.keydown(function(){
+		$("#saveRelaysBtn").addClass('btn-primary');
+	});
+});
+</script>
+
+<div class="row">
+	<div class="col-sm">
+		<div class="card">
+			<div class="card-body"><h5 class="card-title"><span class="oi oi-grid-three-up"/> Sterownik
+			<div class="btn-group float-right">
+				<span id="addCtr" class="btn btn-sm btn-primary" onclick="addController('auto')"><span class="oi oi-loop-circular"/> Auto</span>
+				<button id='anulujCtr' class='btn btn-sm btn-danger d-none' onclick="addController('anuluj')"><span class='oi oi-action-undo'/></button>
+				<button id="addCtrManual" class="btn btn-sm btn-primary" onclick="addControllerManual()"><span class="oi oi-wrench"/> Manual</button>
+			</div>
+			</h5>
+			
+			<hr>
+				<div class="list-group" id="controllerList">
+				</div>
+
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class="col-sm">
+		<div class="card" id="editRelays" style="display: none;">
+			<div class="card-body">
+				<h6 class="card-title">
+					<span class="oi oi-pencil"/> Konfiguracja sterownika<div class="float-right"><button id="removeCtr" class="btn btn-sm btn-danger" onclick="removeCtr()"><span class="oi oi-x"/> Usuń</button></div>
+				</h6>
+			<hr>	
+			<label for="ctrName">Nazwa sterownika</label>			
+			<input id="ctrName" type="text" class="form-control" placeholder="nazwa sterownika">
+			<br>
+			<label for="ctrMode">Tryb działania</label>					
+			<select class="form-control" id="ctrMode">
+				<option value="0">Światła</option>
+				<option value="1">Rolety</option>
+				<option value="2">Ściemniacz</option>
+				<option value="3">Ogrzewanie</option>
+			</select>
+			<br>
+			<label for="ctrAddress">Adres sterownika</label>			<button id="changeCtr" class="btn btn-sm btn-primary float-right" onclick="changeAddress()"><span class="oi oi-pencil"/> Przypisz</button>		
+			<input id="ctrAddress" type="text" class="form-control" placeholder="adres sterownika" disabled>
+			<br>
+			
+			<h6 class="card-title"><span class="oi oi-fork"/> Zdefiniuj przekaźniki</h6>
+				<hr>
+			<div class="input-group">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="id1">1.</span>
+					</div>
+					<input id="relay1" type="text" class="form-control" placeholder="nazwa przekaźnika" aria-describedby="id1">
+				</div>
+				
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="id2">2.</span>
+					</div>
+					<input id="relay2" type="text" class="form-control" placeholder="nazwa przekaźnika" aria-describedby="id2">
+				</div>
+
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="id3">3.</span>
+					</div>
+					<input id="relay3" type="text" class="form-control" placeholder="nazwa przekaźnika" aria-describedby="id3">
+				</div>
+				
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="id4">4.</span>
+					</div>
+					<input id="relay4" type="text" class="form-control" placeholder="nazwa przekaźnika" aria-describedby="id4">
+				</div>
+				
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="id5">5.</span>
+					</div>
+					<input id="relay5" type="text" class="form-control" placeholder="nazwa przekaźnika" aria-describedby="id5">
+				</div>
+				
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="id6">6.</span>
+					</div>
+					<input id="relay6" type="text" class="form-control" placeholder="nazwa przekaźnika" aria-describedby="id6">
+				</div>
+				
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="id7">7.</span>
+					</div>
+					<input id="relay7" type="text" class="form-control" placeholder="nazwa przekaźnika" aria-describedby="id7">
+				</div>
+				
+				<div class="input-group mb-3" id="hideRelay8">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="id8">8.</span>
+					</div>
+					<input id="relay8" type="text" class="form-control" placeholder="nazwa przekaźnika" aria-describedby="id8">
+				</div>
+				
+				<div class="input-group mb-3" id="hideRelayTK1">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="id8">TK1.</span>
+					</div>
+					<input id="relayTK1" type="text" class="form-control" placeholder="nazwa przekaźnika" aria-describedby="id8">
+				</div>
+				
+				<div class="input-group mb-3" id="hideRelayTK2">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="id8">TK2.</span>
+					</div>
+					<input id="relayTK2" type="text" class="form-control" placeholder="nazwa przekaźnika" aria-describedby="id8">
+				</div>
+			</div>	
+			</div>
+		</div>
+	</div>
+</div>

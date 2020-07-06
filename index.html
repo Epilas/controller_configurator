@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>[ AMK ] - Konfigurator</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link href="open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	
+</head>
+
+<body>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/script.js"></script>
+	<script src="js/rest.js"></script>
+	
+	<!-- Modal -->
+<div class="modal fade" id="iconModal" tabindex="-1" role="dialog" aria-labelledby="iconModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="iconModalLabel">Wybierz ikonę ... </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		<img src="" id="openhabIMG"/>
+		Aktualna: <span id="actualOpenHabIcon"></span>
+        <select class='form-control openhabIcon' i='-1' j='-1' k='-1'> </select>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+<nav class="nav nav-justified btn-group" id="topPanel" role="tablist" style="z-index: 100; padding-top: 5px;">
+	<a class="nav-item nav-link btn-primary active" onclick="load('controller')" href="#switches" data-toggle="tab" role="tab" aria-controls="switches" aria-selected="true"> <span class="oi oi-account-login"/> Przekaźniki</a>
+	<a class="nav-item nav-link btn-primary" 	 onclick="load('switch')"	href="#relays" data-toggle="tab" role="tab" aria-controls="relays"  aria-selected="false"> <span class="oi oi-account-logout"/> Zadajniki</a>
+	<a class="nav-item nav-link btn-primary" 	onclick="load('config')"	href="#configuration" data-toggle="tab" role="tab" aria-controls="configuration" aria-selected="false"> <span class="oi oi-grid-two-up"/> Konfiguracja</a>
+	<a class="nav-item nav-link btn-primary" 	onclick="load('heating')"	href="#heating" data-toggle="tab" role="tab" aria-controls="heating" aria-selected="false"> <span class="oi oi-fire"/> Ogrzewanie</a>
+	<a class="nav-item nav-link btn-primary" 	onclick="load('satel')"	href="#satel" data-toggle="tab" role="tab" aria-controls="satel" aria-selected="false"> <span class="oi oi-shield"/> Satel</a>
+	<a class="nav-item nav-link btn-primary" 	onclick="load('openhab')"	href="#configuration" data-toggle="tab" role="tab" aria-controls="configuration" aria-selected="false"> <span class="oi oi-dashboard"/> openHAB</a>
+	<a class="nav-item nav-link btn-primary col-1" 	onclick="load('options')"	href="#options" data-toggle="tab" role="tab" aria-controls="options" aria-selected="false"> <span class="oi oi-cog"/></a>
+</nav>
+	
+	<div class="wrapper container-fluid">
+	</div>
+<div id="bottomPanel" class='p-2'>
+	<span id="bottomPanelMsg"></span> (Pozostało <span id="loadProgress"></span> z <span id="maxAmount"></span>)
+	<div class="progress">
+		<div id="loadProgressBar" class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+	</div>
+</div>
+</body>
+</html>
